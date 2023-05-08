@@ -44,7 +44,7 @@ _board.AddQuote(new Quote("Alma","Counsel with the Lord in all thy doings, and h
 
 // _board.GetRandomQuote();
 
-Menu menu = new Menu(_board);
+Menu _menu = new Menu(_board);
 _menu.Display();
 
 
