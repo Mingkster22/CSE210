@@ -1,5 +1,5 @@
 public class Menu
-(
+{ 
     private Board _board;
 
     public Menu(Board board)
@@ -12,7 +12,7 @@ public class Menu
         string response ="";
         string[] options = ("A","S","Q","F","R");
         while(response!="Q")
-        (
+        
             while(options.Contains(response)==false)
             {
             Console.Write("[A]dd quote\n[S]how quotes\n[F]ind Quote by Author\n[R]andom Quote\n[Q]uit\n\What do you want to do? ");
@@ -52,5 +52,4 @@ public class Menu
             }
             response = "";
         }
-    }
 }

@@ -2,7 +2,7 @@ using System;
 
 class Entry
 {
-    public string _promt = "";
+    private string _promt = "";
     public string _date = "";
     public string _response = "";
     public void get_entry_data(string random_prompt)
