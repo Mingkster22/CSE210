@@ -44,3 +44,35 @@ class Program
         }
     }
 }
+
+
+
+
+
+using System;
+
+public class Shape
+{
+    public void Draw()
+    {
+        Console.WriteLine("Drawing a shape.");
+    }
+}
+
+public class Circle : Shape
+{
+    public void DrawCircle()
+    {
+        Console.WriteLine("Drawing a circle.");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Circle circle = new Circle();
+        circle.Draw();
+        circle.DrawCircle();
+    }
+}
