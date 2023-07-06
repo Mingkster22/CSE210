@@ -14,11 +14,32 @@ public class Check_list_Goal : Goal
         bonus_points = int.Parse(Console.ReadLine());
     }
 
-        public override void Display_goal()
+    public override void Display_goal()
     {
-        Console.WriteLine($"[ ], {_name}, {_description}, currently completed: {many_times}/{want_many_times}");
+        if (_completed == true)
+        {
+        Console.WriteLine($"[x] {_name}, {_description}, currently completed: {want_many_times}/{many_times}");
+        }
+
+        Console.WriteLine($"[ ] {_name}, {_description}, currently completed: {want_many_times}/{many_times}");
+    }
+    
+    public override string save_goal()
+    {
+        return $"{_name},{_description},{_points},{_completed},{want_many_times},{many_times}";
     }
 
+    public override void complete_goal(int user_points)
+    {
+        user_points += _points;
+        want_many_times += 1;
+
+        if(want_many_times == many_times)
+        {
+            user_points += bonus_points;
+            _completed = true;
+        }
+    }
 
 
 }

@@ -4,12 +4,23 @@ public class Eternal_Goal : Goal
 
     public  void ask_name()
     {
-        _eg_answer = Console.ReadLine();
+        _name = Console.ReadLine();
     }
 
         public override void Display_goal()
     {
-        Console.WriteLine($"[ ], {_name}, {_description} ");
+        Console.WriteLine($"[ ] {_name} {_description} ");
+    }
+
+    public override string save_goal()
+    {
+        return $"{_name},{_description},{_points},{_completed}";
+    }
+
+      public override void complete_goal(int user_points)
+    {
+        user_points += _points;
+        _completed = true;
     }
 
 }

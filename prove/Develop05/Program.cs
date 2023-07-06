@@ -2,7 +2,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int points = 0;
+        int user_points = 0;
         int decision = 0;
         int after_decision = 0;
 
@@ -12,7 +12,7 @@ class Program
         while (decision != 6)
         {
 
-            Console.WriteLine($"You have {points} points.");
+            Console.WriteLine($"You have {user_points} points.");
 
             Console.WriteLine("1. Create New Goal\n" +
             "2. List Goals\n" +
@@ -90,8 +90,12 @@ class Program
 
             else if (decision == 3)
             {
-                string path = @"C:\Users\ymg26\Pictures\Code\CSE 210 Spring\prove\Develop05";
-                using (StreamWriter sw = File.CreateText(path));
+                string fileName = "myFile.txt";
+                using (StreamWriter outputFile = new StreamWriter(fileName))
+                {
+                    foreach (Goal i in goal_list)
+                    outputFile.WriteLine(i.save_goal());
+                };
             }
 
             else if (decision == 4)
@@ -101,7 +105,21 @@ class Program
 
             else if (decision == 5)
             {
+                int logo_number = 1;
+                foreach (Goal i in goal_list)
+                {
+                    Console.Write($"{logo_number}. ");
+                    i.Display_goal();
+                    logo_number += 1;
+                }
+                Console.WriteLine("Which goal would you like to display?: ");
+                int choose = int.Parse(Console.ReadLine());
 
+                choose -= 1;
+
+                goal_list[choose].complete_goal(user_points);
+
+                
             }
         }
     }       

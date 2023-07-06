@@ -1,0 +1,3 @@
+simple goal,simple,50,False
+,eternal,100,False
+checklist goal,check list,150,False,3

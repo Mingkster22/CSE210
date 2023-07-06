@@ -22,5 +22,9 @@ public abstract class Goal
 
     public abstract void Display_goal();
 
+    public abstract string save_goal();
+
+    public abstract void complete_goal(int user_points);
+
 }
    
