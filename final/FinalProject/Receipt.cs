@@ -1,13 +1,22 @@
-public class Receipt : Account
+public class Receipt
 {
-    public void Deposit_receipt()
+    public void Ask_receipt(double money)
     {
-        Console.WriteLine("")
+        string decision;
+
+        Console.WriteLine("Would you like your receipt?: ");
+
+        Console.WriteLine("Y or N");
+        decision = Console.ReadLine();
+
+        if (decision == "y")
+        {
+            Console.WriteLine($"Your account balance is currently ${money}.");
+        }
+
+        else
+        {
+        
+        }
     }
-
-    public void Withdraw_receipt()
-    {
-
-    }
-
 }

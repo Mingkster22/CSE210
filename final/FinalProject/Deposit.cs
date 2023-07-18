@@ -1,9 +1,11 @@
-public class Deposit : Account
+public class Deposit
 {
-    public void Deposit_money()
+    public double Deposit_money(double money)
     {
     Console.WriteLine("How much money would you like to deposit?: ");
-    _money += int.Parse(Console.ReadLine());
+    money += double.Parse(Console.ReadLine());
+
+    return money;
 
     }
 }

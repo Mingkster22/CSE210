@@ -1,7 +1,7 @@
-public class Check_balance : Account
+public class Check_balance
 {
-    public void check_money()
+    public void check_money(double money)
     {
-        Console.WriteLine($"Your current balance is ${_money}.");
+        Console.WriteLine($"Your current balance is ${money}.");
     }
 }
